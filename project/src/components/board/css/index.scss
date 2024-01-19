@@ -1,0 +1,19 @@
+
+.cart {
+  height: 200px;
+  width: 400px;
+
+}
+
+.board {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  min-height: 500px;
+}
+
+.btn-top {
+  top: -25px;
+  right: -1px;
+  height: 25px;
+}

@@ -1,0 +1,12 @@
+.alert-show {
+  transition: all 1s;
+}
+
+.alert-hidden {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=index.css.map */
