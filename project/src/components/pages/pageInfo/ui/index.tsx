@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { Board } from "../../../board/types";
 import { Info } from "../type";
 
-const {CART} = Board;
-const {WRAPPER_CONTENT, CONTENT, WRAPPER, PB, LINK, LINK_TEXT, SPAN} = Info;
 
-const infoFind = ( arg:string | number )=> arg ? `${arg}` : "Not found";
 
 const Index: FC = () => {
     const { activeCart, carts } = Selector( ( state )=> state.cartsReducer );
+    const {CART} = Board;
+    const {WRAPPER_CONTENT, CONTENT, WRAPPER, PB, LINK, LINK_TEXT, SPAN} = Info;
+    const infoFind = ( arg:string | number )=> arg ? `${arg}` : "Not found";
     window.scrollTo( 0,0 );
     const cart = carts.find( ( cart )=>{
         if ( cart.id === activeCart ) {

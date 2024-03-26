@@ -8,14 +8,15 @@ import BtnUser from "./button";
 import InputUser from "./input";
 import UserLabel from "./label";
 import UserForm from "./form";
-const { changeVal, autoComp, warnForm, successForm } = actionsBind;
 
-const {HIDDEN, UL, SHOW, LI} = AutoComplete;
-const {WRAPPER, BOTTOM_WRAPPER, MB} = UserSearcherWrapper;
 
 const AddUser: FC = () => {
     const dispatch = Dispatch();
     const { autoComplete } = Selector( ( state ) => state.searcherReducer );
+    const { changeVal, autoComp, warnForm, successForm } = actionsBind;
+    const {HIDDEN, UL, SHOW, LI} = AutoComplete;
+    const {WRAPPER, BOTTOM_WRAPPER, MB} = UserSearcherWrapper;
+
     const autoCompleteClasses: string =
     UL +
     `${autoComplete ? SHOW : HIDDEN}`;

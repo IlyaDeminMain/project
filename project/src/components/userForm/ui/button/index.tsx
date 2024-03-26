@@ -4,14 +4,14 @@ import { actionsBind, Selector } from "../../../../state/hooks";
 import { includesName} from "../../tools/namesHandler";
 import pushCart from "../../tools/submit";
 
-const { autoComp, changeVal, warnForm, successForm } = actionsBind;
 
-const {UNBLOCK, TYPE, BLOCK} = ButtonUserType;
 
 const BtnUser: FC = () => {
     const { loading, error, data } = Selector( ( state ) => state.fetchReducer );
     const { userInputValue } = Selector( ( state ) => state.searcherReducer );
     const btnBlocking: boolean = !loading && !error && userInputValue.length > 0;
+    const { autoComp, changeVal, warnForm, successForm } = actionsBind;
+    const {UNBLOCK, TYPE, BLOCK} = ButtonUserType;
     const nameIn = ( includesName() );
     const classBtn: () => string = () => {
         if ( btnBlocking ) {

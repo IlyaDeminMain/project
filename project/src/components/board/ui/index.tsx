@@ -4,15 +4,15 @@ import { actionsBind, Selector } from "../../../state/hooks";
 import { Board, InfoCart, styleCart, SvgBoard } from "../types";
 import { Link } from "react-router-dom";
 
-const {removeCart, activeCartUser} = actionsBind;
 
-const {BOARD_WRAPPER, BTN, DESC, CART, CLOSE, HEADER, SUBHEADER} = Board;
-const {BTN_INFO, INFO} = InfoCart;
-const {CLASS, D, FILL, LINECAP, STROKE, STROKE_WIDTH, XMLNS, VIEW_BOX, LINE_JOIN, ARIA_HIDDEN} = SvgBoard;
 
 
 const Index: FC = () => {
     const { carts } = Selector( ( state ) => state.cartsReducer );
+    const {removeCart, activeCartUser} = actionsBind;
+    const {BOARD_WRAPPER, BTN, DESC, CART, CLOSE, HEADER, SUBHEADER} = Board;
+    const {BTN_INFO, INFO} = InfoCart;
+    const {CLASS, D, FILL, LINECAP, STROKE, STROKE_WIDTH, XMLNS, VIEW_BOX, LINE_JOIN, ARIA_HIDDEN} = SvgBoard;
 
     return (
         <div className={BOARD_WRAPPER}>

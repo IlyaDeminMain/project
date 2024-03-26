@@ -6,9 +6,9 @@ import Success from "../../alerts/ui/success";
 import Warn from "../../alerts/ui/warn";
 import Loading from "../../alerts/ui/loading";
 
-const {ADD_USER} = AppClasses;
 
 const Index: FC = () => {
+    const {ADD_USER} = AppClasses;
     return (
         <>
             <Loading/>

@@ -5,12 +5,13 @@ import { includesName } from "../../tools/namesHandler";
 import pushCart from "../../tools/submit";
 const { warnForm, successForm } = actionsBind;
 
-const {FORM} = UserSearcherWrapper;
+
 
 
 const UserForm: FC<Children> = ( {children} ) => {
     const { data } = Selector( ( state ) => state.fetchReducer );
     const { userInputValue } = Selector( ( state ) => state.searcherReducer );
+    const {FORM} = UserSearcherWrapper;
     const nameIn = ( includesName() );
     const onSubmit = ( event:  FormEvent<HTMLFormElement> ) => {
         event.preventDefault();

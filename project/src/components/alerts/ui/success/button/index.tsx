@@ -3,11 +3,11 @@ import { ButtonAlert } from "../../../types/success/button";
 import { actionsBind } from "../../../../../state/hooks";
 const { successForm } = actionsBind;
 
-const { BTN_CLASS } = ButtonAlert;
+
 
 const Index: FC = () => {
     const onClick = ()=>{successForm( false );};
-
+    const { BTN_CLASS } = ButtonAlert;
     return (
         <button className={BTN_CLASS} onClick={onClick}>
         🗙
