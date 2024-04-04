@@ -5,8 +5,7 @@ import { Success } from "../../types/success";
 import Button from "./button";
 
 const Alert: FC = () => {
-    const { success } = Selector( ( state ) => state.searcherReducer );
-    const { warn } = Selector( ( state ) => state.searcherReducer );
+    const { success, warn } = Selector( ( {searcherReducer} ) => searcherReducer );
     const {SHOW, HIDDEN, TEXT} = Success;
     const trigger = ( success && !warn );
 

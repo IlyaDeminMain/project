@@ -9,10 +9,11 @@ const { warnForm, successForm } = actionsBind;
 
 
 const UserForm: FC<Children> = ( {children} ) => {
-    const { data } = Selector( ( state ) => state.fetchReducer );
-    const { userInputValue } = Selector( ( state ) => state.searcherReducer );
+    const { data } = Selector( ( {fetchReducer} ) => fetchReducer );
+    const { userInputValue } = Selector( ( {searcherReducer} ) => searcherReducer );
     const {FORM} = UserSearcherWrapper;
     const nameIn = ( includesName() );
+
     const onSubmit = ( event:  FormEvent<HTMLFormElement> ) => {
         event.preventDefault();
         if ( !nameIn ) {

@@ -1,30 +1,34 @@
 import React, {FC} from "react";
-import { Selector } from "../../../../state/hooks";
+import {Selector} from "../../../../state/hooks";
 import "../../css/index.css";
-import { Warn } from "../../types/warn";
-
+import {Warn} from "../../types/warn";
 
 
 const Alert: FC = () => {
-    const { success, warn, userInputValue } = Selector( ( state ) => state.searcherReducer );
-    const { error } = Selector( ( state ) => state.fetchReducer );
+    const { success, warn, userInputValue } = Selector( ( {searcherReducer} ) => searcherReducer );
+    const { error } = Selector( ( {fetchReducer} ) => fetchReducer );
     const {SHOW, TOP, TEXT, HEADER_TEXT, HEADER, HIDDEN, BODY, DOTS} = Warn;
-    const notFound = ( InpVal: string )=>{
-        if ( InpVal.length > 20 ) {
-            return InpVal.slice( 0, 20 ) + DOTS;
-        } else {
-            return InpVal;
-        }
-    };
-    const trigger = ( !success && warn );
 
+    const notFound = ( InpVal: string )=>{
+        const Length = InpVal.length
+        InpVal = InpVal + TEXT
+
+        if ( Length > 20 ) {
+            return InpVal.slice(0, 20) + DOTS
+        }
+
+        return InpVal;
+    };
+
+    const trigger = ( !success && warn );
+    const hidden = HIDDEN + TOP
     return (
-        <div className={trigger || error ? SHOW : HIDDEN + TOP } role={"alert"}>
+        <div className={trigger || error ? SHOW : hidden } role={"alert"}>
             <div className={HEADER}>
                 {HEADER_TEXT}
             </div>
             <div className={BODY}>
-                <p>{`${notFound( userInputValue )} ${TEXT}`}</p>
+                <p>{ notFound( userInputValue ) }</p>
             </div>
         </div>
     );

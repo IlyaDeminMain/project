@@ -1,14 +1,11 @@
 import React, {FC} from "react";
 import "../css/index.css";
 import { actionsBind, Selector } from "../../../state/hooks";
-import { Board, InfoCart, styleCart, SvgBoard } from "../types";
+import {Board, InfoCart, SvgBoard} from "../types";
 import { Link } from "react-router-dom";
 
-
-
-
 const Index: FC = () => {
-    const { carts } = Selector( ( state ) => state.cartsReducer );
+    const { carts } = Selector( ( {cartsReducer} ) => cartsReducer );
     const {removeCart, activeCartUser} = actionsBind;
     const {BOARD_WRAPPER, BTN, DESC, CART, CLOSE, HEADER, SUBHEADER} = Board;
     const {BTN_INFO, INFO} = InfoCart;
@@ -18,14 +15,22 @@ const Index: FC = () => {
         <div className={BOARD_WRAPPER}>
             {
                 carts.map( ( {username, name, id}, index )=>{
-                    const {firstname, lastname} = name;
-                    const textHeader = `${index + 1}# ${username.length < 30 ? username.toUpperCase() : username.slice( 0, 19 ) + "..."}`;
-                    let textSubheader = `${firstname.toUpperCase()} ${lastname.toUpperCase()}`;
+
+                    let {firstname, lastname} = name;
+                    username = username.toLowerCase()
+                    firstname = firstname.toUpperCase()
+                    lastname = lastname.toUpperCase()
+
+                    const idHeader = ((index + 1) + "# ")
+                    const nameHeader = (username.length < 8 ? username : username.slice( 0, 7 ) + "...")
+                    const textHeader = idHeader + nameHeader;
+
+                    let textSubheader = firstname + lastname;
                     textSubheader = textSubheader.length < 19 ? textSubheader : textSubheader.slice( 0, 19 ) + "...";
+
                     return (
-                        <div key={`$${index}cart@@@`}
-                            className={CART}
-                            style={styleCart}
+                        <div key={`${Math.random()}cart`}
+                            className={CART + ' border-t-25'}
                         >
                             <button className={CLOSE} onClick={()=>{removeCart( index );}}>🗙</button>
                             <h5 className={HEADER}>{textHeader}</h5>

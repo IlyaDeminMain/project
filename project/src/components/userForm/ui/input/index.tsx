@@ -5,9 +5,10 @@ import { InputUserType } from "../../types/input";
 
 
 const InputUser: FC = () => {
-    const { userInputValue } = Selector( ( state ) => state.searcherReducer );
+    const { userInputValue } = Selector( ( {searcherReducer} ) => searcherReducer );
     const { autoComp, changeVal, warnForm, successForm } = actionsBind;
     const {CLASS, ID, TYPE, AUTO_COMPLETE_OFF, PLACEHOLDER} = InputUserType;
+
     const inputChange = ( { target }: React.ChangeEvent<HTMLInputElement> ) => {
         warnForm( false );
         const { value } = target;

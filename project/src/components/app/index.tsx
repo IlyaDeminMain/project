@@ -10,6 +10,7 @@ import { PageInfo } from "../pages/pageInfo";
 const App: FC = () => {
     const {CONTAINER} = AppClasses;
     const {HOME, INFO} = Path;
+
     return (
         <div className={CONTAINER} >
             <Routes>

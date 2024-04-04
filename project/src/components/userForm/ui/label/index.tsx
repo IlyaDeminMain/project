@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { LabelUserType, TextColor } from "../../types/label";
-import {labelName} from "../../tools/namesHandler";
+import {includesName} from "../../tools/namesHandler";
 
 
 
 const UserLabel: FC = () => {
-    const labelNameToggle = labelName();
+    const labelNameToggle = includesName();
     const {BLACK, BLUE} = TextColor;
     const {CLASS, HTML_FOR, SEARCH_USER} = LabelUserType;
     let textColor;

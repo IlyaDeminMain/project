@@ -12,17 +12,17 @@ import UserForm from "./form";
 
 const AddUser: FC = () => {
     const dispatch = Dispatch();
-    const { autoComplete } = Selector( ( state ) => state.searcherReducer );
+    const { autoComplete } = Selector( ( {searcherReducer} ) => searcherReducer );
     const { changeVal, autoComp, warnForm, successForm } = actionsBind;
     const {HIDDEN, UL, SHOW, LI} = AutoComplete;
     const {WRAPPER, BOTTOM_WRAPPER, MB} = UserSearcherWrapper;
 
-    const autoCompleteClasses: string =
-    UL +
-    `${autoComplete ? SHOW : HIDDEN}`;
+    const autoCompleteClasses: string = (UL + (autoComplete ? SHOW : HIDDEN)).toString();
+
     useEffect( () => {
         dispatch( fetchUsers( 10 ) );
-    }, [dispatch] );
+    }, [] );
+
     return (
         <div className={WRAPPER} >
             <UserForm >
@@ -33,12 +33,12 @@ const AddUser: FC = () => {
                 <div className={BOTTOM_WRAPPER}>
                     <BtnUser />
                     <ul className={autoCompleteClasses}>
-                        {namesHandler()?.map( ( name, i ) => {
+                        {namesHandler()?.map( ( name ) => {
                             const nameUp: string = name.toUpperCase();
                             return (
                                 <li
                                     className={LI}
-                                    key={name + `${i}li`}
+                                    key={`${Math.random()}li`}
                                     onClick={() => {
                                         warnForm( false );
                                         successForm( false );

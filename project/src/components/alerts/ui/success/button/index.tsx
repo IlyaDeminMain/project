@@ -6,8 +6,9 @@ const { successForm } = actionsBind;
 
 
 const Index: FC = () => {
-    const onClick = ()=>{successForm( false );};
+    const onClick = ()=>{successForm( false )};
     const { BTN_CLASS } = ButtonAlert;
+
     return (
         <button className={BTN_CLASS} onClick={onClick}>
         🗙

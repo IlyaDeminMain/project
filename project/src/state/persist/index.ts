@@ -28,6 +28,7 @@ const persistConfig = {
     storage,
     blacklist: ["searcherReducer", "fetchReducer", "namesReducer"],
 };
+
 export const rootReducer = combineReducers( {
     fetchReducer,
     searcherReducer,

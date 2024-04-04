@@ -7,8 +7,8 @@ import pushCart from "../../tools/submit";
 
 
 const BtnUser: FC = () => {
-    const { loading, error, data } = Selector( ( state ) => state.fetchReducer );
-    const { userInputValue } = Selector( ( state ) => state.searcherReducer );
+    const { loading, error, data } = Selector( ( {fetchReducer} ) => fetchReducer );
+    const { userInputValue } = Selector( ( {searcherReducer} ) => searcherReducer );
     const btnBlocking: boolean = !loading && !error && userInputValue.length > 0;
     const { autoComp, changeVal, warnForm, successForm } = actionsBind;
     const {UNBLOCK, TYPE, BLOCK} = ButtonUserType;
