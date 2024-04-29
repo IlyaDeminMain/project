@@ -12,7 +12,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 import { reducers } from "../reducers";
 import { cartsReducer } from "../reducers/carts";
 
-const { searcherReducer, fetchReducer, namesReducer } = reducers;
+const { searcherReducer, axiosReducer } = reducers;
 
 export const ignoredActions = [
     FLUSH,
@@ -30,9 +30,8 @@ const persistConfig = {
 };
 
 export const rootReducer = combineReducers( {
-    fetchReducer,
+    axiosReducer,
     searcherReducer,
-    namesReducer,
     cartsReducer
 } );
 export const persistedReducer = persistReducer( persistConfig, rootReducer );

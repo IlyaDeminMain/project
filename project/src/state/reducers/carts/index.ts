@@ -4,14 +4,14 @@ import type {DataFetch} from "../fetch/type";
 
 interface InitialState {
   carts: DataFetch[];
-  activeCart: number | null
+  activeCartId: number | null
 }
 const initialState: InitialState = {
     carts: [],
-    activeCart: null
+    activeCartId: null
 };
 const name = "names";
-const cartsSlice = createSlice( {
+const slice = createSlice( {
     name,
     initialState,
     reducers: {
@@ -23,7 +23,7 @@ const cartsSlice = createSlice( {
             }
         },
         activeCartUser( state, {payload}: PayloadAction<number> ) {
-            state.activeCart = payload;
+            state.activeCartId = payload;
         },
         removeCart( state, {payload}: PayloadAction<number> ) {
             state.carts = state.carts.filter( ( item, i )=>{
@@ -35,6 +35,6 @@ const cartsSlice = createSlice( {
     },
 } );
 
-export const cartsActions = cartsSlice.actions;
-export const cartsReducer = cartsSlice.reducer;
+export const cartsActions = slice.actions;
+export const cartsReducer = slice.reducer;
 

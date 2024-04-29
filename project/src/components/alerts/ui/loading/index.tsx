@@ -1,19 +1,13 @@
 import React, {FC} from "react";
 import { Selector } from "../../../../state/hooks";
-import "../../css/index.css";
 import { LoadingAlert, LoadingText } from "../../types/loading";
-import {warnLog} from "../../../../log";
-
+import "../../css/index.css";
 
 const Alert: FC = () => {
     
-    const { loading } = Selector( ( {fetchReducer} ) => fetchReducer );
+    const { loading } = Selector( ( {axiosReducer} ) => axiosReducer );
     const {SHOW, HIDDEN, WRAPPER, WRAPPER_ROLE, SPAN_WAIT, SPAN_TEXT } = LoadingAlert;
     const {WAIT, LOADING_DATA} = LoadingText;
-
-    if (loading){
-        warnLog('loading')
-    }
 
     return (
         <div className={ loading ? SHOW : HIDDEN } role={"alert"}>

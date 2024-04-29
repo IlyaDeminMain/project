@@ -1,10 +1,9 @@
 import React, {FC} from "react";
-import "./css/index.css";
-import { AppClasses, Path } from "./types";
+import { AppClasses, Path } from "../types";
 import { Route, Routes } from "react-router-dom";
-import PageHome from "../pages/pageHome";
-import { PageInfo } from "../pages/pageInfo";
-
+import PageHome from "../../pages/pageHome/ui";
+import { PageInfo } from "../../pages/pageInfo";
+import "../css/index.css";
 
 
 const App: FC = () => {

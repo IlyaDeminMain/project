@@ -17,7 +17,7 @@ const initialState: SearcherSlice = {
 
 const name = "searcher";
 
-const searcherSlice = createSlice( {
+const slice = createSlice( {
     name,
     initialState,
     reducers: {
@@ -34,5 +34,5 @@ const searcherSlice = createSlice( {
             state.success = payload;
         }
     }} );
-export const searcherActions = searcherSlice.actions;
-export const searcherReducer = searcherSlice.reducer;
+export const searcherActions = slice.actions;
+export const searcherReducer = slice.reducer;

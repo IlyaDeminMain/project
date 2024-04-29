@@ -7,12 +7,14 @@ import pushCart from "../../tools/submit";
 
 
 const BtnUser: FC = () => {
-    const { loading, error, data } = Selector( ( {fetchReducer} ) => fetchReducer );
+    const { loading, error, data } = Selector( ( {axiosReducer} ) => axiosReducer );
     const { userInputValue } = Selector( ( {searcherReducer} ) => searcherReducer );
-    const btnBlocking: boolean = !loading && !error && userInputValue.length > 0;
     const { autoComp, changeVal, warnForm, successForm } = actionsBind;
+
+    const btnBlocking: boolean = !loading && !error && userInputValue.length > 0;
     const {UNBLOCK, TYPE, BLOCK} = ButtonUserType;
     const nameIn = ( includesName() );
+
     const classBtn: () => string = () => {
         if ( btnBlocking ) {
             return UNBLOCK;

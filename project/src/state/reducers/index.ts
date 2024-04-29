@@ -1,9 +1,8 @@
 import { searcherActions, searcherReducer, } from "./userSearcher";
-import { fetchReducer } from "./fetch";
+import { axiosReducer } from "./fetch";
 import {cartsReducer, cartsActions} from "./carts";
-import { namesReducer, namesActions } from "./names";
 
-const actions = { ...searcherActions, ...namesActions, ...cartsActions };
-const reducers = { searcherReducer, fetchReducer, namesReducer, cartsReducer };
+const actions = { ...searcherActions, ...cartsActions };
+const reducers = { searcherReducer, axiosReducer, cartsReducer };
 
 export { actions, reducers };

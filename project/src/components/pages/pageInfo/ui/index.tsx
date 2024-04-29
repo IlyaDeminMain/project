@@ -7,17 +7,15 @@ import { Info } from "../type";
 
 
 const Index: FC = () => {
-    const { activeCart, carts } = Selector( ( {cartsReducer} )=> cartsReducer );
+    const { activeCartId, carts } = Selector( ({cartsReducer} )=> cartsReducer );
+    const {WRAPPER_CONTENT, CONTENT, WRAPPER, PB, LINK, LINK_TEXT, SPAN, } = Info;
+    const infoCart = Info.CART
     const {CART} = Board;
-    const {WRAPPER_CONTENT, CONTENT, WRAPPER, PB, LINK, LINK_TEXT, SPAN} = Info;
-
-    const infoFind = ( arg:string | number )=> arg ? `${arg}` : "Not found";
+    const infoText = ( info:string | number )=> info ? `${info}` : "Not found";
 
     window.scrollTo( 0,0 );
 
-    const cart = carts.find( ( {id} )=>{
-        return id === activeCart
-    } );
+    const cart = carts.find( ( {id} )=> id === activeCartId );
 
     if ( cart !== undefined ) {
         const {name, phone, password, username, address, email, id} = cart
@@ -27,19 +25,19 @@ const Index: FC = () => {
 
         const cartInfo  = {
             addressInfo: {
-                geolocationInfo: { latInfo: infoFind( lat ), longInfo: infoFind( long ) },
-                cityInfo: infoFind( city ),
-                streetInfo: infoFind( street ),
-                numberInfo: infoFind( number ),
-                zipcodeInfo: infoFind( zipcode ),
+                geolocationInfo: { latInfo: infoText( lat ), longInfo: infoText( long ) },
+                cityInfo: infoText( city ),
+                streetInfo: infoText( street ),
+                numberInfo: infoText( number ),
+                zipcodeInfo: infoText( zipcode ),
             },
 
-            idInfo: infoFind( id ),
-            emailInfo: infoFind( email ),
-            usernameInfo: infoFind( username ),
-            passwordInfo: infoFind( password ),
-            nameInfo: { firstnameInfo: infoFind( firstname ), lastnameInfo: infoFind( lastname ) },
-            phoneInfo: infoFind( phone ),
+            idInfo: infoText( id ),
+            emailInfo: infoText( email ),
+            usernameInfo: infoText( username ),
+            passwordInfo: infoText( password ),
+            nameInfo: { firstnameInfo: infoText( firstname ), lastnameInfo: infoText( lastname ) },
+            phoneInfo: infoText( phone ),
         };
 
         const {nameInfo, phoneInfo, passwordInfo, usernameInfo, addressInfo, emailInfo, idInfo} = cartInfo
@@ -52,19 +50,19 @@ const Index: FC = () => {
                 <Link to={"/"} className={LINK}>
                     {LINK_TEXT}
                 </Link>
-                <div className={CART + Info.CART}>
+                <div className={CART + infoCart}>
                     <div className={WRAPPER_CONTENT}>
                         <div className={CONTENT}>{ `ID: ${idInfo}`}</div>
                         <div className={CONTENT}>{ `Name: ${firstnameInfo}`}</div>
                     </div>
                 </div>
-                <div className={CART + Info.CART}>
+                <div className={CART + infoCart}>
                     <div className={WRAPPER_CONTENT}>
                         <div className={CONTENT}>{ `Name: ${firstnameInfo}`}</div>
                         <div className={CONTENT}>{ `Surname: ${lastnameInfo}`}</div>
                     </div>
                 </div>
-                <div className={CART + Info.CART}>
+                <div className={CART + infoCart}>
                     <div className={WRAPPER_CONTENT}>
                         <div className={CONTENT}>{ `User: ${usernameInfo}`}</div>
                         <div className={CONTENT}>{ `Password: ${passwordInfo}`}</div>
@@ -73,7 +71,7 @@ const Index: FC = () => {
                     </div>
                 </div>
 
-                <div className={CART + Info.CART}>
+                <div className={CART + infoCart}>
                     <div className={WRAPPER_CONTENT}>
                         <div className={CONTENT}>{ `City: ${cityInfo}`}</div>
                         <div className={CONTENT}>{ `Street: ${streetInfo}`}</div>

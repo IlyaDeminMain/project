@@ -9,7 +9,7 @@ const { warnForm, successForm } = actionsBind;
 
 
 const UserForm: FC<Children> = ( {children} ) => {
-    const { data } = Selector( ( {fetchReducer} ) => fetchReducer );
+    const { data } = Selector( ( {axiosReducer} ) => axiosReducer );
     const { userInputValue } = Selector( ( {searcherReducer} ) => searcherReducer );
     const {FORM} = UserSearcherWrapper;
     const nameIn = ( includesName() );

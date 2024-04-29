@@ -1,8 +1,8 @@
 import React, {FC} from "react";
-import "../css/index.css";
 import { actionsBind, Selector } from "../../../state/hooks";
 import {Board, InfoCart, SvgBoard} from "../types";
 import { Link } from "react-router-dom";
+import "../css/index.css";
 
 const Index: FC = () => {
     const { carts } = Selector( ( {cartsReducer} ) => cartsReducer );
@@ -10,6 +10,13 @@ const Index: FC = () => {
     const {BOARD_WRAPPER, BTN, DESC, CART, CLOSE, HEADER, SUBHEADER} = Board;
     const {BTN_INFO, INFO} = InfoCart;
     const {CLASS, D, FILL, LINECAP, STROKE, STROKE_WIDTH, XMLNS, VIEW_BOX, LINE_JOIN, ARIA_HIDDEN} = SvgBoard;
+
+    const maxLength = (nameText:string, maxNumber:number)=>{
+        if (nameText.length < maxNumber){
+            return nameText
+        }
+        return nameText.slice( 0, maxNumber ) + "..."
+    }
 
     return (
         <div className={BOARD_WRAPPER}>
@@ -20,13 +27,12 @@ const Index: FC = () => {
                     username = username.toLowerCase()
                     firstname = firstname.toUpperCase()
                     lastname = lastname.toUpperCase()
-
                     const idHeader = ((index + 1) + "# ")
-                    const nameHeader = (username.length < 8 ? username : username.slice( 0, 7 ) + "...")
+                    const nameHeader = maxLength(username, 8)
                     const textHeader = idHeader + nameHeader;
 
                     let textSubheader = firstname + lastname;
-                    textSubheader = textSubheader.length < 19 ? textSubheader : textSubheader.slice( 0, 19 ) + "...";
+                    textSubheader = maxLength(textSubheader, 19)
 
                     return (
                         <div key={`${Math.random()}cart`}

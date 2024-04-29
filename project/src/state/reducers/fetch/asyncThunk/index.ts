@@ -1,15 +1,17 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import type {DataFetch} from "../type";
+import {URL} from "../type";
 
 enum TypePrefix {
   USER = "user/fetchUsers",
 }
 
-const fetchUsers = createAsyncThunk( TypePrefix.USER, async ( num: number ) => {
+const axiosThunk = createAsyncThunk( TypePrefix.USER, async (num: number ) => {
     const response = await axios.get<DataFetch[]>(
-        "https://fakestoreapi.com/users",
+        URL.USERS,
         {
+            method: 'get',
             params: {
                 limit: num,
             },
@@ -17,4 +19,4 @@ const fetchUsers = createAsyncThunk( TypePrefix.USER, async ( num: number ) => {
     );
     return response.data;
 } );
-export default fetchUsers;
+export default axiosThunk;
