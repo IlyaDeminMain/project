@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
 import { Dispatch, Selector, actionsBind } from "../../../state/hooks";
-import axiosThunk from "../../../state/reducers/fetch/asyncThunk";
+import axiosThunk from "../../../state/reducers/api/asyncThunk";
 import { AutoComplete, UserSearcherWrapper } from "../types/form";
 import { namesHandler } from "../tools/namesHandler";
 import BtnUser from "./button";
@@ -16,11 +16,13 @@ const AddUser: FC = () => {
     const {HIDDEN, UL, SHOW, LI} = AutoComplete;
     const {WRAPPER, BOTTOM_WRAPPER, MB} = UserSearcherWrapper;
 
-    const autoCompleteClasses: string = (UL + (autoComplete ? SHOW : HIDDEN)).toString();
+    const autoCompleteClass: string = ( UL + ( autoComplete ? SHOW : HIDDEN ) ).toString();
 
     useEffect( () => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         dispatch( axiosThunk( 10 ) );
-    }, [] );
+    }, [dispatch] );
 
     return (
         <div className={WRAPPER} >
@@ -31,7 +33,7 @@ const AddUser: FC = () => {
                 </div>
                 <div className={BOTTOM_WRAPPER}>
                     <BtnUser />
-                    <ul className={autoCompleteClasses}>
+                    <ul className={autoCompleteClass}>
                         {namesHandler()?.map( ( name ) => {
                             const nameUp: string = name.toUpperCase();
                             return (

@@ -9,7 +9,6 @@ import Loading from "../../../alerts/ui/loading";
 
 const Index: FC = () => {
     const {ADD_USER} = AppClasses;
-
     return (
         <>
             <Loading/>

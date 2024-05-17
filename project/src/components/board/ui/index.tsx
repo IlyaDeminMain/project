@@ -11,12 +11,12 @@ const Index: FC = () => {
     const {BTN_INFO, INFO} = InfoCart;
     const {CLASS, D, FILL, LINECAP, STROKE, STROKE_WIDTH, XMLNS, VIEW_BOX, LINE_JOIN, ARIA_HIDDEN} = SvgBoard;
 
-    const maxLength = (nameText:string, maxNumber:number)=>{
-        if (nameText.length < maxNumber){
-            return nameText
+    const maxLength = ( nameText:string, maxNumber:number )=>{
+        if ( nameText.length < maxNumber ) {
+            return nameText;
         }
-        return nameText.slice( 0, maxNumber ) + "..."
-    }
+        return nameText.slice( 0, maxNumber ) + "...";
+    };
 
     return (
         <div className={BOARD_WRAPPER}>
@@ -24,20 +24,19 @@ const Index: FC = () => {
                 carts.map( ( {username, name, id}, index )=>{
 
                     let {firstname, lastname} = name;
-                    username = username.toLowerCase()
-                    firstname = firstname.toUpperCase()
-                    lastname = lastname.toUpperCase()
-                    const idHeader = ((index + 1) + "# ")
-                    const nameHeader = maxLength(username, 8)
+                    username = username.toLowerCase();
+                    firstname = firstname.toUpperCase();
+                    lastname = lastname.toUpperCase();
+                    const idHeader = ( ( index + 1 ) + "# " );
+                    const nameHeader = maxLength( username, 8 );
                     const textHeader = idHeader + nameHeader;
 
                     let textSubheader = firstname + lastname;
-                    textSubheader = maxLength(textSubheader, 19)
+                    textSubheader = maxLength( textSubheader, 19 );
 
                     return (
                         <div key={`${Math.random()}cart`}
-                            className={CART + ' border-t-25'}
-                        >
+                            className={CART + " border-t-25"}>
                             <button className={CLOSE} onClick={()=>{removeCart( index );}}>🗙</button>
                             <h5 className={HEADER}>{textHeader}</h5>
                             <p className={SUBHEADER}>{textSubheader}</p>

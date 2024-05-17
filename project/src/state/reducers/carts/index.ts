@@ -1,14 +1,16 @@
 import {createSlice} from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type {DataFetch} from "../fetch/type";
+import type {DataFetch} from "../api/type";
 
-interface InitialState {
+export interface InitialState {
   carts: DataFetch[];
-  activeCartId: number | null
+  activeCartId: number | null;
+  date: number | null
 }
 const initialState: InitialState = {
     carts: [],
-    activeCartId: null
+    activeCartId: null,
+    date: null
 };
 const name = "names";
 const slice = createSlice( {
@@ -31,6 +33,9 @@ const slice = createSlice( {
                     return item;
                 }
             } );
+        },
+        setDate( state, {payload}:PayloadAction<number> ) {
+            state.date = payload;
         }
     },
 } );

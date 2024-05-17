@@ -10,18 +10,18 @@ const Alert: FC = () => {
     const {SHOW, TOP, TEXT, HEADER_TEXT, HEADER, HIDDEN, BODY, DOTS} = Warn;
 
     const notFound = ( InpVal: string )=>{
-        const Length = InpVal.length
-        InpVal = InpVal + TEXT
+        const Length = InpVal.length;
+        InpVal = InpVal + TEXT;
 
         if ( Length > 20 ) {
-            return InpVal.slice(0, 20) + DOTS
+            return InpVal.slice( 0, 20 ) + DOTS;
         }
 
         return InpVal;
     };
 
     const trigger = ( !success && warn );
-    const hidden = HIDDEN + TOP
+    const hidden = HIDDEN + TOP;
 
     return (
         <div className={trigger || error ? SHOW : hidden } role={"alert"}>

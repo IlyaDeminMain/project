@@ -26,7 +26,7 @@ export const ignoredActions = [
 const persistConfig = {
     key: "root",
     storage,
-    blacklist: ["searcherReducer", "fetchReducer", "namesReducer"],
+    blacklist: ["searcherReducer", "fetchReducer"],
 };
 
 export const rootReducer = combineReducers( {

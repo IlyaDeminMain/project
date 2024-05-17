@@ -1,5 +1,5 @@
 import { searcherActions, searcherReducer, } from "./userSearcher";
-import { axiosReducer } from "./fetch";
+import { axiosReducer } from "./api";
 import {cartsReducer, cartsActions} from "./carts";
 
 const actions = { ...searcherActions, ...cartsActions };

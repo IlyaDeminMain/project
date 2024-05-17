@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import store, { persiStore } from "./state/store";
+
 import App from "./components/app/ui";
 import { PersistGate } from "redux-persist/integration/react";
 import React, {Suspense} from "react";

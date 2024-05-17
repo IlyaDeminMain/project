@@ -7,9 +7,9 @@ import { Info } from "../type";
 
 
 const Index: FC = () => {
-    const { activeCartId, carts } = Selector( ({cartsReducer} )=> cartsReducer );
+    const { activeCartId, carts } = Selector( ( {cartsReducer} )=> cartsReducer );
     const {WRAPPER_CONTENT, CONTENT, WRAPPER, PB, LINK, LINK_TEXT, SPAN, } = Info;
-    const infoCart = Info.CART
+    const infoCart = Info.CART;
     const {CART} = Board;
     const infoText = ( info:string | number )=> info ? `${info}` : "Not found";
 
@@ -18,10 +18,10 @@ const Index: FC = () => {
     const cart = carts.find( ( {id} )=> id === activeCartId );
 
     if ( cart !== undefined ) {
-        const {name, phone, password, username, address, email, id} = cart
-        const {firstname, lastname} = name
-        const {geolocation, city, street, number, zipcode} = address
-        const {lat, long} = geolocation
+        const {name, phone, password, username, address, email, id} = cart;
+        const {firstname, lastname} = name;
+        const {geolocation, city, street, number, zipcode} = address;
+        const {lat, long} = geolocation;
 
         const cartInfo  = {
             addressInfo: {
@@ -40,10 +40,10 @@ const Index: FC = () => {
             phoneInfo: infoText( phone ),
         };
 
-        const {nameInfo, phoneInfo, passwordInfo, usernameInfo, addressInfo, emailInfo, idInfo} = cartInfo
-        const {firstnameInfo, lastnameInfo} = nameInfo
-        const {geolocationInfo, cityInfo, streetInfo, numberInfo, zipcodeInfo} = addressInfo
-        const {latInfo, longInfo} = geolocationInfo
+        const {nameInfo, phoneInfo, passwordInfo, usernameInfo, addressInfo, emailInfo, idInfo} = cartInfo;
+        const {firstnameInfo, lastnameInfo} = nameInfo;
+        const {geolocationInfo, cityInfo, streetInfo, numberInfo, zipcodeInfo} = addressInfo;
+        const {latInfo, longInfo} = geolocationInfo;
 
         return (
             <div className={WRAPPER}>

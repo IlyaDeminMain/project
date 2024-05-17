@@ -7,16 +7,16 @@ enum TypePrefix {
   USER = "user/fetchUsers",
 }
 
-const axiosThunk = createAsyncThunk( TypePrefix.USER, async (num: number ) => {
-    const response = await axios.get<DataFetch[]>(
+const axiosThunk = createAsyncThunk( TypePrefix.USER, async ( num: number ) => {
+    const {data} = await axios.get<DataFetch[]>(
         URL.USERS,
         {
-            method: 'get',
+            method: "get",
             params: {
                 limit: num,
             },
         }
     );
-    return response.data;
+    return data;
 } );
 export default axiosThunk;

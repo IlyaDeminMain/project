@@ -19,17 +19,17 @@ const slice = createSlice( {
     reducers: {},
     extraReducers: ( builder ) =>
         builder
-            .addCase( axiosThunk.pending, (state ) => {
+            .addCase( axiosThunk.pending, ( state ) => {
                 state.loading = true;
                 state.data = [];
                 state.error = undefined;
             } )
-            .addCase( axiosThunk.fulfilled, (state, { payload } ) => {
+            .addCase( axiosThunk.fulfilled, ( state, { payload } ) => {
                 state.loading = false;
                 state.data = payload;
                 state.error = undefined;
             } )
-            .addCase( axiosThunk.rejected, (state, { error } ) => {
+            .addCase( axiosThunk.rejected, ( state, { error } ) => {
                 state.loading = false;
                 state.data = [];
                 state.error = error.message;
