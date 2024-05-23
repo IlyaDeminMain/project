@@ -5,12 +5,10 @@ import type {DataFetch} from "../api/type";
 export interface InitialState {
   carts: DataFetch[];
   activeCartId: number | null;
-  date: number | null
 }
 const initialState: InitialState = {
     carts: [],
     activeCartId: null,
-    date: null
 };
 const name = "names";
 const slice = createSlice( {
@@ -33,9 +31,6 @@ const slice = createSlice( {
                     return item;
                 }
             } );
-        },
-        setDate( state, {payload}:PayloadAction<number> ) {
-            state.date = payload;
         }
     },
 } );

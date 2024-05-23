@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import { actionsBind , Selector } from "../../../../state/hooks";
-import { InputUserType } from "../../types/input";
+import { InputUserType } from "../../const/input";
 
 
 

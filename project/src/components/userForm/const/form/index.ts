@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 
 
 export enum AutoComplete {
@@ -15,6 +14,3 @@ export enum UserSearcherWrapper {
   MB = "mb-4"
 }
 
-export interface Children {
-  children: ReactNode
-}

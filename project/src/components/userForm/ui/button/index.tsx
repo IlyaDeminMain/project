@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import { ButtonUserType } from "../../types/button";
+import { ButtonUserType } from "../../const/button";
 import { actionsBind, Selector } from "../../../../state/hooks";
 import { includesName} from "../../tools/namesHandler";
 import pushCart from "../../tools/submit";

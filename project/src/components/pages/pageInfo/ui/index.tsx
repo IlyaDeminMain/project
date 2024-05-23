@@ -1,8 +1,8 @@
 import React, {FC} from "react";
 import { Selector } from "../../../../state/hooks";
 import { Link } from "react-router-dom";
-import { Board } from "../../../board/types";
-import { Info } from "../type";
+import { Board } from "../../../board/const";
+import { Info } from "../const";
 
 
 
@@ -47,7 +47,7 @@ const Index: FC = () => {
 
         return (
             <div className={WRAPPER}>
-                <Link to={"/"} className={LINK}>
+                <Link to={"/"} className={LINK} >
                     {LINK_TEXT}
                 </Link>
                 <div className={CART + infoCart}>

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { LabelUserType, TextColor } from "../../types/label";
+import { LabelUserType, TextColor } from "../../const/label";
 import {includesName} from "../../tools/namesHandler";
 
 

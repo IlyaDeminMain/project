@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import { Selector } from "../../../../state/hooks";
-import { Success } from "../../types/success";
+import { Success } from "../../const/success";
 import Button from "./button";
 import "../../css/index.css";
 

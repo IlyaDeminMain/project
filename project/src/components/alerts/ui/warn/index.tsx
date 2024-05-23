@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import {Selector} from "../../../../state/hooks";
-import {Warn} from "../../types/warn";
+import {Warn} from "../../const/warn";
 import "../../css/index.css";
 
 

@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import { ButtonAlert } from "../../../types/success/button";
+import { ButtonAlert } from "../../../const/success/button";
 import { actionsBind } from "../../../../../state/hooks";
 const { successForm } = actionsBind;
 

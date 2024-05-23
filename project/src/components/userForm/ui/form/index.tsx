@@ -1,5 +1,6 @@
 import React, { FormEvent, FC } from "react";
-import { Children, UserSearcherWrapper } from "../../types/form";
+import {  UserSearcherWrapper } from "../../const/form";
+import {Children } from "../../types";
 import { actionsBind, Selector } from "../../../../state/hooks";
 import { includesName } from "../../tools/namesHandler";
 import pushCart from "../../tools/submit";

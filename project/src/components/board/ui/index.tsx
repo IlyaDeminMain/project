@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import { actionsBind, Selector } from "../../../state/hooks";
-import {Board, InfoCart, SvgBoard} from "../types";
+import {Board, InfoCart, SvgBoard} from "../const";
 import { Link } from "react-router-dom";
 import "../css/index.css";
 

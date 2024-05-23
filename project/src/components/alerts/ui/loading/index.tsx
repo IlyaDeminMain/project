@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import { Selector } from "../../../../state/hooks";
-import { LoadingAlert, LoadingText } from "../../types/loading";
+import { LoadingAlert, LoadingText } from "../../const/loading";
 import "../../css/index.css";
 
 const Alert: FC = () => {

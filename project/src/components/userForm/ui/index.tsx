@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { Dispatch, Selector, actionsBind } from "../../../state/hooks";
 import axiosThunk from "../../../state/reducers/api/asyncThunk";
-import { AutoComplete, UserSearcherWrapper } from "../types/form";
+import { AutoComplete, UserSearcherWrapper } from "../const/form";
 import { namesHandler } from "../tools/namesHandler";
 import BtnUser from "./button";
 import InputUser from "./input";
