@@ -13,7 +13,3 @@ export interface DataFetch {
   name: { firstname: string; lastname: string; };
   phone: string;
 }
-
-export enum URL {
-  "USERS" = "https://fakestoreapi.com/users"
-}

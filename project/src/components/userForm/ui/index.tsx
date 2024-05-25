@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from "react";
-import { Dispatch, Selector, actionsBind } from "../../../state/hooks";
+import { Selector, actionsBind } from "../../../state/hooks";
 import axiosThunk from "../../../state/reducers/api/asyncThunk";
 import { AutoComplete, UserSearcherWrapper } from "../const/form";
 import { namesHandler } from "../tools/namesHandler";
@@ -10,7 +10,6 @@ import UserForm from "./form";
 import "../css/style.css";
 
 const AddUser: FC = () => {
-    const dispatch = Dispatch();
     const { autoComplete } = Selector( ( {searcherReducer} ) => searcherReducer );
     const { changeVal, autoComp, warnForm, successForm } = actionsBind;
     const {HIDDEN, UL, SHOW, LI} = AutoComplete;
@@ -19,10 +18,8 @@ const AddUser: FC = () => {
     const autoCompleteClass: string = ( UL + ( autoComplete ? SHOW : HIDDEN ) ).toString();
 
     useEffect( () => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        dispatch( axiosThunk( 10 ) );
-    }, [dispatch] );
+        axiosThunk( 10 )
+    }, [] );
 
     return (
         <div className={WRAPPER} >

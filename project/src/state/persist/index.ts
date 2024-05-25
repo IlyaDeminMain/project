@@ -4,10 +4,9 @@ import {
 } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
 import { reducers } from "../reducers";
-import { cartsReducer } from "../reducers/carts";
 
 
-const { searcherReducer, axiosReducer } = reducers;
+const { searcherReducer, axiosReducer, cartsReducer } = reducers;
 
 
 const persistConfig = {
