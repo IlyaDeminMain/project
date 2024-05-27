@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import type {DataFetch} from "../type";
 import {URL, TypePrefix} from "./const";
+import { rootReducer } from "../../../persist"
 
 
 const axiosThunk = createAsyncThunk( TypePrefix.USER, async ( num: number ) => {
@@ -16,4 +17,6 @@ const axiosThunk = createAsyncThunk( TypePrefix.USER, async ( num: number ) => {
     );
     return data;
 } );
+
+export type typeThunk =  ReturnType<typeof axiosThunk>
 export default axiosThunk;

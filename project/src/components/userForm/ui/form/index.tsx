@@ -28,7 +28,7 @@ const UserForm: FC<Children> = ( {children} ) => {
 
     };
     return (
-        <form className={FORM} onSubmit={onSubmit}>
+        <form className={FORM} onSubmit={onSubmit} >
             {children}
         </form>
     );

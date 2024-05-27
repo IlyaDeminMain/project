@@ -9,7 +9,7 @@ export enum AutoComplete {
 
 export enum UserSearcherWrapper {
   WRAPPER = "w-full max-w-xs m-auto",
-  FORM = "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 relative",
+  FORM = "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 relative mt-7",
   BOTTOM_WRAPPER = "flex items-center justify-between",
   MB = "mb-4"
 }

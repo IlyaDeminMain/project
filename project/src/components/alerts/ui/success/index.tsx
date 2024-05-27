@@ -10,8 +10,8 @@ const Alert: FC = () => {
     const trigger = ( success && !warn );
 
     return (
-        <div className={ trigger ? SHOW : HIDDEN } role={"alert"}>
-            <p>{TEXT}</p>
+        <div className={ (trigger ? SHOW : HIDDEN) + " absolute w-full" } role={"alert"} >
+            <p >{TEXT}</p>
             <Button/>
         </div>
     );

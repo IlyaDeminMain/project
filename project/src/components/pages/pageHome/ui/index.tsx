@@ -11,7 +11,8 @@ const Index: FC = () => {
     const {ADD_USER} = AppClasses;
 
     return (
-        <>
+
+        <div className={"relative"}>
             <Loading/>
             <Success/>
             <Warn/>
@@ -19,7 +20,7 @@ const Index: FC = () => {
                 <AddUser />
             </div>
             <Board/>
-        </>
+        </div>
     );
 };
 

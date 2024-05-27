@@ -12,7 +12,7 @@ const { searcherReducer, axiosReducer, cartsReducer } = reducers;
 const persistConfig = {
     key: "root",
     storage,
-    blacklist: ["searcherReducer", "fetchReducer"],
+    blacklist: ["searcherReducer", "axiosReducer"],
 };
 
 export const rootReducer = combineReducers( {

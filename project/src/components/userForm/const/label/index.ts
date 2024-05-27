@@ -2,7 +2,7 @@
 export enum LabelUserType {
   CLASS = "block text-gray-700 text-sm font-bold mb-2",
   HTML_FOR = "username",
-  SEARCH_USER = "Search user (numbers and only English letters)"
+  SEARCH_USER = "Search user (please write only numbers and English letters.)"
 }
 
 export enum TextColor {
