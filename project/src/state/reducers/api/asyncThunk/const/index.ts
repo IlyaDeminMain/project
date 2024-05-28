@@ -1,9 +1,13 @@
 enum URL {
-    "USERS" = "https://fakestoreapi.com/users"
+    "FAKE_API" = "https://fakestoreapi.com"
+}
+
+enum Path {
+    "USERS" = "/users"
 }
 
 enum TypePrefix {
     USER = "user/fetchUsers",
 }
 
-export {URL, TypePrefix}
+export { URL, TypePrefix, Path }

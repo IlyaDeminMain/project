@@ -1,13 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import type {DataFetch} from "../type";
-import {URL, TypePrefix} from "./const";
-import { rootReducer } from "../../../persist"
+import { URL, TypePrefix, Path } from "./const";
 
+axios.defaults.baseURL = URL.FAKE_API;
 
 const axiosThunk = createAsyncThunk( TypePrefix.USER, async ( num: number ) => {
     const {data} = await axios.get<DataFetch[]>(
-        URL.USERS,
+        Path.USERS,
         {
             params: {
                 limit: num,
@@ -18,5 +18,4 @@ const axiosThunk = createAsyncThunk( TypePrefix.USER, async ( num: number ) => {
     return data;
 } );
 
-export type typeThunk =  ReturnType<typeof axiosThunk>
 export default axiosThunk;

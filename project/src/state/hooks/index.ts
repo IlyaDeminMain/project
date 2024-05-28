@@ -11,3 +11,6 @@ export type RootState = ReturnType<typeof rootReducer>;
 export const Dispatch: () => AppDispatch = useDispatch;
 export const Selector: TypedUseSelectorHook<RootState> = useSelector;
 export const actionsBind = bindActionCreators( actions, store.dispatch );
+
+
+// export const Dispatch: () => AppDispatch = useDispatch;
