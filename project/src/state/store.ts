@@ -18,7 +18,7 @@ const store = configureStore( {
                     REGISTER,
                 ]
             },
-        } ),
+        } )
 } );
 
 export default store;

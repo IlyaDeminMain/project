@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios from "axios"
 import type {DataFetch} from "../type";
 import { URL, TypePrefix, Path } from "./const";
 
