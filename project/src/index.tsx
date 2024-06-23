@@ -19,7 +19,7 @@ root.render(
             <Provider store={store}>
                 <Suspense fallback={<Loading/>}>
                     <PersistGate loading={<Loading/>} persistor={persiStore}>
-                        <div className={"bg-main"}>
+                        <div className={"bg-main min-h-screen"}>
                             <App />
                         </div>
                     </PersistGate>

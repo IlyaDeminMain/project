@@ -9,9 +9,6 @@ import "../css/index.css";
 const App: FC = () => {
     const {CONTAINER} = AppClasses;
     const {HOME, INFO} = Path;
-
-    
-
     return (
         <div className={CONTAINER} >
             <Routes>
@@ -23,3 +20,5 @@ const App: FC = () => {
 };
 
 export default App;
+
+

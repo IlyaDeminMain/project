@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from "react";
-import { Selector, actionsBind } from "../../../state/hooks"
+import { Selector, actionsBind } from "../../../state/hooks";
 import axiosThunk from "../../../state/reducers/api/asyncThunk";
 import { AutoComplete, UserSearcherWrapper } from "../const/form";
 import { namesHandler } from "../tools/namesHandler";
@@ -7,7 +7,7 @@ import BtnUser from "./button";
 import InputUser from "./input";
 import UserLabel from "./label";
 import UserForm from "./form";
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import "../css/style.css";
 
 
